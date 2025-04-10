@@ -8,19 +8,32 @@ let currentData = null;
 document.addEventListener('DOMContentLoaded', function() {
     console.log("DOM chargé, initialisation du site");
     
-    // Initialiser la carte
-    if (window.mapManager && typeof window.mapManager.initMap === 'function') {
-        window.mapManager.initMap();
-        console.log("Carte initialisée");
-    } else {
-        console.error("mapManager ou sa méthode initMap n'est pas disponible");
-    }
-    
     // Charger la catégorie par défaut
     loadCategory(currentCategory);
     
     // Ajouter les écouteurs d'événements pour la navigation
     setupNavigation();
+    
+    // Configurer le bouton de fermeture de la carte
+    setupMapControls();
+    
+    // Vérifier si nous sommes sur un écran de bureau (non-mobile)
+    if (window.innerWidth > 768) {
+        // Initialiser la carte seulement en mode bureau
+        if (window.mapManager && typeof window.mapManager.initMap === 'function') {
+            window.mapManager.initMap();
+            console.log("Carte initialisée en mode bureau");
+            
+            // Précharger les marqueurs si des données sont disponibles
+            if (window.currentPlaces && window.currentPlaces.length > 0 && 
+                window.mapManager.addMarkersForPlaces) {
+                window.mapManager.addMarkersForPlaces(window.currentPlaces);
+                console.log("Marqueurs ajoutés à la carte");
+            }
+        }
+    } else {
+        console.log("Mode mobile détecté, la carte sera initialisée lors du premier clic");
+    }
 });
 
 // Configuration de la navigation
@@ -68,11 +81,17 @@ async function loadCategory(category) {
         // Afficher les lieux
         displayPlaces(data.places);
         
-        // Ajouter les marqueurs sur la carte
-        if (window.mapManager && typeof window.mapManager.addMarkersForPlaces === 'function') {
+        // Ajouter les marqueurs sur la carte seulement si nous sommes en mode bureau
+        // ou si la carte est déjà initialisée
+        if (window.innerWidth > 768 && window.mapManager && 
+            typeof window.mapManager.addMarkersForPlaces === 'function' &&
+            window.mapManager.isMapInitialized && window.mapManager.isMapInitialized()) {
+            console.log("Ajout des marqueurs à la carte initialisée");
             window.mapManager.addMarkersForPlaces(data.places);
         } else {
-            console.error("mapManager ou sa méthode addMarkersForPlaces n'est pas disponible");
+            console.log("Stockage des données pour un ajout ultérieur des marqueurs");
+            // Stocker les données pour un ajout ultérieur des marqueurs
+            window.currentPlaces = data.places;
         }
         
         // Ajouter les filtres de date pour la catégorie événements
@@ -209,6 +228,74 @@ function createPlaceCard(place, index) {
         </div>
     `;
     
+    // Ajouter les gestionnaires d'événements après avoir défini innerHTML
+    // Ajouter un gestionnaire d'événements pour le survol
+    card.addEventListener('mouseenter', function() {
+        if (window.mapManager && typeof window.mapManager.highlightPlace === 'function') {
+            window.mapManager.highlightPlace(index);
+        }
+    });
+    
+    // Ajouter un gestionnaire d'événements pour le clic (pour afficher la carte en mode mobile)
+    card.addEventListener('click', function(event) {
+        console.log('Card clicked, window width:', window.innerWidth);
+        // Vérifier si on est en mode mobile (largeur d'écran <= 768px)
+        if (window.innerWidth <= 768) {
+            console.log('Mobile mode detected, showing map');
+            // Mettre en évidence le lieu sur la carte
+            if (window.mapManager && typeof window.mapManager.highlightPlace === 'function') {
+                window.mapManager.highlightPlace(index);
+            }
+            
+            // Implémenter le pattern liste-détail pour le mode mobile
+            const mapContainer = document.querySelector('.map-container');
+            console.log('Map container found:', mapContainer);
+            
+            // Vérifier si la carte est déjà initialisée
+            let isMapInitialized = window.mapManager && window.mapManager.isMapInitialized && window.mapManager.isMapInitialized();
+            console.log('Is map already initialized:', isMapInitialized);
+            
+            // Ajouter les classes pour afficher la carte
+            mapContainer.classList.add('active');
+            document.body.classList.add('map-active');
+            
+            // Attendre que le conteneur de la carte soit visible avant d'initialiser
+            setTimeout(() => {
+                console.log('Délai terminé, initialisation de la carte');
+                
+                // Si nous sommes en mode mobile et que la carte n'est pas encore initialisée
+                if (window.innerWidth <= 768 && !isMapInitialized) {
+                    console.log('Initializing map for the first time in mobile mode');
+                    
+                    // Initialiser la carte
+                    if (window.mapManager && typeof window.mapManager.initMap === 'function') {
+                        window.mapManager.initMap();
+                        console.log('Carte initialisée en mode mobile');
+                        
+                        // Ajouter les marqueurs après l'initialisation
+                        if (window.currentPlaces && window.currentPlaces.length > 0 && 
+                            window.mapManager.addMarkersForPlaces) {
+                            console.log('Ajout des marqueurs à la carte mobile');
+                            window.mapManager.addMarkersForPlaces(window.currentPlaces);
+                        }
+                    }
+                }
+                
+                // Mettre en évidence le lieu sur la carte
+                if (window.mapManager && typeof window.mapManager.highlightPlace === 'function') {
+                    window.mapManager.highlightPlace(index);
+                    console.log('Place highlighted on map');
+                }
+                
+                // Mettre à jour la carte
+                if (window.mapManager && typeof window.mapManager.updateMap === 'function') {
+                    window.mapManager.updateMap();
+                    console.log('Map updated');
+                }
+            }, 300); // Délai plus long pour s'assurer que le conteneur est visible
+        }
+    });
+    
     return card;
 }
 
@@ -328,6 +415,53 @@ function filterEventsByDate(day, month, year) {
     displayPlaces(filteredEvents);
     if (window.mapManager && typeof window.mapManager.addMarkersForPlaces === 'function') {
         window.mapManager.addMarkersForPlaces(filteredEvents);
+    }
+}
+
+// Fonction pour configurer les contrôles de la carte (bouton de fermeture)
+function setupMapControls() {
+    console.log('Setting up map controls');
+    const closeMapBtn = document.getElementById('close-map-btn');
+    console.log('Close map button found:', closeMapBtn);
+    
+    if (closeMapBtn) {
+        closeMapBtn.addEventListener('click', function(event) {
+            console.log('Close map button clicked');
+            event.preventDefault();
+            event.stopPropagation();
+            
+            const mapContainer = document.querySelector('.map-container');
+            console.log('Map container before closing:', mapContainer.className);
+            
+            // Retirer la classe active pour faire glisser la carte hors écran
+            mapContainer.classList.remove('active');
+            
+            // Retirer la classe du body pour ramener le contenu à l'écran
+            document.body.classList.remove('map-active');
+            
+            console.log('Map container after closing:', mapContainer.className);
+        });
+    } else {
+        console.error('Close map button not found in the DOM');
+    }
+    
+    // Ajouter un écouteur pour les changements de taille d'écran
+    window.addEventListener('resize', function() {
+        // Si on passe en mode desktop, s'assurer que la carte est visible
+        if (window.innerWidth > 768) {
+            const mapContainer = document.querySelector('.map-container');
+            mapContainer.classList.remove('active');
+            console.log('Resized to desktop, removed active class from map container');
+        }
+    });
+    
+    // Vérifier l'état initial
+    const mapContainer = document.querySelector('.map-container');
+    if (mapContainer) {
+        console.log('Initial map container state:', mapContainer.className);
+        console.log('Initial window width:', window.innerWidth);
+    } else {
+        console.error('Map container not found in the DOM');
     }
 }
 

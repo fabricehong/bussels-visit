@@ -217,6 +217,25 @@
     .detail-item {
         width: calc(50% - 0.5rem);
     }
+    
+    /* Indicateur visuel pour les cartes cliquables en mode mobile */
+    .place-card::after {
+        content: '\1F5FA\FE0F Voir sur la carte';
+        display: block;
+        text-align: center;
+        padding: 8px 0;
+        background-color: var(--gray-200);
+        color: var(--gray-700);
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-top: 10px;
+        border-radius: 0 0 12px 12px;
+    }
+    
+    .place-card:hover::after {
+        background-color: var(--primary-color);
+        color: white;
+    }
 }
 
 @media (max-width: 576px) {

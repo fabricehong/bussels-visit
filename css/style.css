@@ -248,6 +248,32 @@ footer {
     margin: 0 auto;
 }
 
+/* Styles pour le bouton de fermeture de la carte */
+.close-map-button {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 2500;
+    transition: all 0.3s ease;
+    /* Assurer que le bouton est bien visible */
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.close-map-button:hover {
+    background-color: var(--gray-200);
+}
+
 /* Responsive styles */
 @media (max-width: 1024px) {
     .container {
@@ -259,6 +285,11 @@ footer {
         position: relative;
         top: 0;
         height: 500px;
+        /* S'assurer que ces styles ne sont pas appliqués en mode mobile */
+        right: auto;
+        width: 100%;
+        opacity: 1;
+        display: block;
     }
 }
 
@@ -269,10 +300,56 @@ footer {
     
     .container {
         padding: 1rem;
+        position: relative;
+        overflow-x: hidden;
     }
     
+    .content-area {
+        width: 100%;
+        height: auto;
+        overflow-y: visible;
+        padding-right: 0;
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    /* Approche simple pour mobile avec display none/block */
     .map-container {
-        height: 400px;
+        display: none; /* Cachée par défaut */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 2000;
+        background-color: white;
+    }
+    
+    /* Quand la carte est active, l'afficher */
+    .map-container.active {
+        display: block;
+    }
+    
+    /* Cacher le contenu quand la carte est active */
+    body.map-active .content-area {
+        display: none;
+    }
+    
+    /* S'assurer que la carte prend tout l'espace disponible */
+    #map {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .close-map-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2500;
+    }
+    
+    /* Rendre les cartes d'activités cliquables en mode mobile */
+    .place-card {
+        cursor: pointer;
     }
 }
 
