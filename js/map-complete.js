@@ -4,6 +4,8 @@
 let map;
 let markers = [];
 let activeMarker = null;
+let locationMarker = null; // Marqueur pour la position de l'utilisateur
+let locationCircle = null; // Cercle pour indiquer la précision de la position
 
 // Initialisation de la carte
 function initMap() {
@@ -42,6 +44,27 @@ function initMap() {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
             maxZoom: 19
         }).addTo(map);
+        
+        // Ajouter le contrôle de localisation
+        L.control.locate({
+            position: 'bottomright',
+            icon: 'fa fa-location-arrow',
+            strings: {
+                title: "Afficher ma position"
+            },
+            locateOptions: {
+                enableHighAccuracy: true,
+                watch: true // Suivre la position en temps réel
+            },
+            onLocationFound: function(e) {
+                // Utiliser notre fonction personnalisée pour afficher la position
+                showUserLocation(e);
+            }
+        }).addTo(map);
+        
+        // Écouter les événements de localisation standard de Leaflet
+        map.on('locationfound', showUserLocation);
+        map.on('locationerror', onLocationError);
         
         // Forcer une mise à jour immédiate de la taille
         setTimeout(() => {
@@ -219,6 +242,37 @@ function addCustomMarkerStyles() {
             transform: scale(1.4);
             z-index: 1000;
         }
+        
+        /* Styles pour le marqueur de position de l'utilisateur */
+        .user-location-marker {
+            background: transparent;
+        }
+        
+        .user-location-dot {
+            width: 14px;
+            height: 14px;
+            margin: 5px;
+            background-color: #4285F4;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
     `;
     document.head.appendChild(style);
 }
@@ -290,6 +344,58 @@ function isMapInitialized() {
     return map !== null && map !== undefined;
 }
 
+// Fonction pour afficher la position de l'utilisateur sur la carte
+function showUserLocation(e) {
+    const latlng = e.latlng || e.target.getLatLng();
+    const accuracy = e.accuracy || 0;
+    
+    console.log("Position utilisateur détectée:", latlng, "Précision:", accuracy);
+    
+    // Supprimer les marqueurs de position précédents
+    if (locationMarker) {
+        map.removeLayer(locationMarker);
+    }
+    if (locationCircle) {
+        map.removeLayer(locationCircle);
+    }
+    
+    // Créer un marqueur pour la position actuelle
+    locationMarker = L.marker(latlng, {
+        icon: L.divIcon({
+            className: 'user-location-marker',
+            html: '<div class="user-location-dot"></div>',
+            iconSize: [24, 24],
+            iconAnchor: [12, 12]
+        })
+    }).addTo(map);
+    
+    // Ajouter un cercle pour montrer la précision de la localisation
+    if (accuracy > 0) {
+        locationCircle = L.circle(latlng, {
+            radius: accuracy,
+            weight: 2,
+            color: '#4285F4',
+            fillColor: '#4285F4',
+            fillOpacity: 0.15
+        }).addTo(map);
+    }
+    
+    // Centrer la carte sur la position de l'utilisateur
+    // map.setView(latlng, 16); // Commenter cette ligne si vous ne voulez pas recentrer automatiquement
+}
+
+// Fonction pour gérer les erreurs de localisation
+function onLocationError(e) {
+    console.error("Erreur de localisation:", e.message);
+    alert("Impossible de déterminer votre position. Vérifiez que vous avez autorisé la géolocalisation.");
+}
+
+// Fonction pour localiser manuellement l'utilisateur
+function locateUser() {
+    console.log("Tentative de localisation de l'utilisateur...");
+    map.locate({setView: true, maxZoom: 16, enableHighAccuracy: true});
+}
+
 // Exporter les fonctions pour les utiliser dans d'autres scripts
 window.mapManager = {
     initMap,
@@ -300,7 +406,8 @@ window.mapManager = {
     createCustomMarker,
     addCustomMarkerStyles,
     updateMap,
-    isMapInitialized
+    isMapInitialized,
+    locateUser
 };
 
 // Ajouter les styles des marqueurs
