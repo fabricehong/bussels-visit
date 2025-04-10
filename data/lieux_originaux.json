@@ -1,0 +1,145 @@
+{
+  "category": "Lieux originaux",
+  "places": [
+    {
+      "title": "La Bellone",
+      "description": "Un magnifique bâtiment de style baroque, sculpté par l'architecte bruxellois Jean Cosyn en 1697, caché derrière un passage couvert de la rue de Flandre.",
+      "address": "Rue de Flandre, 1000 Bruxelles",
+      "ambiance": "Artistique et historique, centre polyvalent dédié au spectacle et aux arts de la scène",
+      "best_time": "Lors des événements culturels et expositions",
+      "uniqueness": "Façade baroque exceptionnelle préservée sous une verrière moderne",
+      "info": "Centre culturel actif, vérifier la programmation sur leur site web",
+      "coordinates": {
+        "lat": 50.8489,
+        "lng": 4.3453
+      },
+      "image": "bellone.jpg"
+    },
+    {
+      "title": "La rue de la Cigogne",
+      "description": "Une oasis de fraîcheur en plein cœur de la capitale, accessible depuis la rue Rempart des Moines via une arche surmontée d'une statuette de Saint Roch.",
+      "address": "Rue de la Cigogne, 1000 Bruxelles",
+      "ambiance": "Paisible et poétique, particulièrement belle au printemps",
+      "best_time": "Entre avril et juin, quand la glycine s'empare de la rue et ajoute une touche de poésie",
+      "uniqueness": "Ruelle cachée fleurie qui semble hors du temps",
+      "info": "Accessible toute l'année, gratuit",
+      "coordinates": {
+        "lat": 50.8505,
+        "lng": 4.3466
+      },
+      "image": "rue_cigogne.jpg"
+    },
+    {
+      "title": "La Bibliothèque royale et son point de vue",
+      "description": "Construite en 1935 à la mémoire du roi Albert 1er, cette institution appelée aussi 'l'Albertine' offre l'un des plus beaux panoramas de Bruxelles depuis son 5ème étage.",
+      "address": "Mont des Arts, 1000 Bruxelles",
+      "ambiance": "Culturelle et panoramique",
+      "best_time": "En fin d'après-midi pour profiter de la lumière sur la ville",
+      "uniqueness": "Vue imprenable sur Bruxelles depuis la terrasse du 5ème étage",
+      "info": "Accès à la bibliothèque gratuit, musée payant",
+      "coordinates": {
+        "lat": 50.8442,
+        "lng": 4.3563
+      },
+      "image": "bibliotheque_royale.jpg"
+    },
+    {
+      "title": "L'Hôtel de Ville de Saint-Gilles",
+      "description": "L'un des plus beaux hôtels de ville de la capitale, réalisé par l'architecte Albert Dumont dans un style néo-Renaissance française avec de magnifiques ornements et statues.",
+      "address": "Place Van Meenen 39, 1060 Saint-Gilles",
+      "ambiance": "Majestueuse et historique",
+      "best_time": "En journée pour admirer les détails architecturaux",
+      "uniqueness": "Façade ornée de statues représentant la force, les finances, la maternité, la solidarité et la justice",
+      "info": "Visites possibles, première pierre posée en 1900 contenant des documents sur la construction et des pièces de monnaie",
+      "coordinates": {
+        "lat": 50.8278,
+        "lng": 4.3449
+      },
+      "image": "hotel_ville_saint_gilles.jpg"
+    },
+    {
+      "title": "L'Aegidium",
+      "description": "Construit en 1905, ce joyau architectural au cœur du parvis de Saint-Gilles fut tour à tour salle de spectacles, cinéma, dancing et espace de rencontre.",
+      "address": "Parvis de Saint-Gilles, 1060 Saint-Gilles",
+      "ambiance": "Éclectique et historique",
+      "best_time": "Lors des visites guidées exclusives",
+      "uniqueness": "Décors éclectiques préservés, en cours de rénovation pour devenir un laboratoire urbain et créatif",
+      "info": "En rénovation, visites guidées exclusives organisées ponctuellement",
+      "coordinates": {
+        "lat": 50.8303,
+        "lng": 4.3434
+      },
+      "image": "aegidium.jpg"
+    },
+    {
+      "title": "Musée des Égouts",
+      "description": "Un improbable musée qui retrace l'histoire de la création des égouts bruxellois et explique comment ses 1900km de ramifications ont vu le jour.",
+      "address": "Porte d'Anderlecht, 1000 Bruxelles",
+      "ambiance": "Insolite et éducative",
+      "best_time": "Toute l'année, de préférence en semaine pour éviter l'affluence",
+      "uniqueness": "Visite souterraine du réseau d'égouts de la ville",
+      "info": "Visites guidées disponibles pour en savoir plus sur l'histoire, le cycle de l'eau et les rumeurs qui entourent ce monde souterrain",
+      "coordinates": {
+        "lat": 50.8417,
+        "lng": 4.3386
+      },
+      "image": "musee_egouts.jpg"
+    },
+    {
+      "title": "Rue Porselein",
+      "description": "Une ruelle pavée, bordée de maisonnettes colorées et de fleurs, qui offre un spectacle unique aux amateurs d'architecture et mène à deux autres trésors cachés.",
+      "address": "Rue Porselein, 1070 Anderlecht",
+      "ambiance": "Pittoresque et colorée",
+      "best_time": "Dès l'arrivée des beaux jours quand les fleurs sont en bloom",
+      "uniqueness": "Maisonnettes colorées et accès à la place de la Vaillance et la Maison d'Erasme",
+      "info": "Accessible toute l'année, gratuit",
+      "coordinates": {
+        "lat": 50.8356,
+        "lng": 4.3075
+      },
+      "image": "rue_porselein.jpg"
+    },
+    {
+      "title": "Maison d'Erasme",
+      "description": "Lieu où a séjourné l'humaniste néerlandais en 1521, abritant une impressionnante collection de peintures, dessins, une bibliothèque et une reconstitution de son atelier.",
+      "address": "Rue du Chapitre 31, 1070 Anderlecht",
+      "ambiance": "Culturelle et historique",
+      "best_time": "En semaine pour une visite plus tranquille",
+      "uniqueness": "Jardin d'herbes médicinales et jardin philosophique",
+      "info": "Musée, horaires et tarifs à vérifier",
+      "coordinates": {
+        "lat": 50.8359,
+        "lng": 4.3069
+      },
+      "image": "maison_erasme.jpg"
+    },
+    {
+      "title": "Hall of Fame",
+      "description": "L'un des plus beaux ensembles Street Art de Bruxelles, une galerie d'art à ciel ouvert rassemblant près de 150 graphes colorés gigantesques.",
+      "address": "Rue Sergent De Bruyne, 1070 Anderlecht",
+      "ambiance": "Urbaine et artistique",
+      "best_time": "Journée ensoleillée pour apprécier les couleurs vives",
+      "uniqueness": "Explosion de couleurs et de styles qui se renouvelle sans cesse",
+      "info": "Accessible librement, gratuit",
+      "coordinates": {
+        "lat": 50.8342,
+        "lng": 4.3108
+      },
+      "image": "hall_of_fame.jpg"
+    },
+    {
+      "title": "La Friture René",
+      "description": "Un restaurant typique avec ses nappes à carreaux rouges et blancs et son menu traditionnel, une institution familiale depuis 1932.",
+      "address": "Place de la Résistance 14, 1070 Anderlecht",
+      "ambiance": "Authentique et locale",
+      "best_time": "Repas du soir pour l'ambiance typique",
+      "uniqueness": "Expérience culinaire authentiquement bruxelloise",
+      "info": "Restaurant proposant des plats typiques : moules, américain préparé, bœuf et cheval, bonne sélection de bières",
+      "coordinates": {
+        "lat": 50.8322,
+        "lng": 4.3075
+      },
+      "image": "friture_rene.jpg"
+    }
+  ]
+}

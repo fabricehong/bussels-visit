@@ -1,0 +1,145 @@
+{
+  "category": "Lieux en plein air",
+  "places": [
+    {
+      "title": "Parc du Cinquantenaire",
+      "description": "Un magnifique parc avec l'arc de triomphe en arrière-plan, offrant de vastes espaces verts et des allées ombragées.",
+      "address": "Parc du Cinquantenaire, 1000 Bruxelles",
+      "ambiance": "Historique et majestueux, idéal pour les promenades et pique-niques",
+      "best_time": "Printemps et été, particulièrement en matinée pour éviter la foule",
+      "uniqueness": "L'arc de triomphe monumental et les musées qui l'entourent (Autoworld, Musée de l'Armée)",
+      "info": "Accessible tous les jours, gratuit",
+      "coordinates": {
+        "lat": 50.8400,
+        "lng": 4.3936
+      },
+      "image": "parc_cinquantenaire.jpg"
+    },
+    {
+      "title": "Parc Léopold",
+      "description": "Un parc paisible situé derrière le Parlement européen dans le quartier européen.",
+      "address": "Parc Léopold, 1000 Bruxelles",
+      "ambiance": "Calme et institutionnel, fréquenté par les fonctionnaires européens",
+      "best_time": "En semaine pendant la pause déjeuner pour observer la vie locale",
+      "uniqueness": "La présence d'un petit étang et d'un ancien institut scientifique",
+      "info": "Accessible tous les jours, gratuit",
+      "coordinates": {
+        "lat": 50.8389,
+        "lng": 4.3797
+      },
+      "image": "parc_leopold.jpg"
+    },
+    {
+      "title": "Etangs d'Ixelles",
+      "description": "Un ensemble d'étangs pittoresques situés dans le quartier Art déco d'Ixelles.",
+      "address": "Étangs d'Ixelles, 1050 Ixelles",
+      "ambiance": "Romantique et pittoresque, populaire auprès des joggeurs et promeneurs",
+      "best_time": "Fin d'après-midi pour profiter du coucher de soleil sur l'eau",
+      "uniqueness": "Les cygnes et canards qui peuplent les étangs, entourés d'architecture Art déco",
+      "info": "Accessible en permanence, gratuit",
+      "coordinates": {
+        "lat": 50.8275,
+        "lng": 4.3792
+      },
+      "image": "etangs_ixelles.jpg"
+    },
+    {
+      "title": "Bois de la Cambre",
+      "description": "Un grand espace boisé qui, le week-end, est en partie fermé à la circulation pour le plus grand bonheur des promeneurs, cyclistes et patineurs.",
+      "address": "Bois de la Cambre, 1000 Bruxelles",
+      "ambiance": "Naturelle et familiale, idéale pour les activités de plein air",
+      "best_time": "Week-ends quand les routes sont fermées aux voitures",
+      "uniqueness": "L'île du Chalet Robinson au milieu du lac, accessible par bateau",
+      "info": "Accessible tous les jours, routes fermées aux voitures le week-end",
+      "coordinates": {
+        "lat": 50.8097,
+        "lng": 4.3804
+      },
+      "image": "bois_cambre.jpg"
+    },
+    {
+      "title": "Parc de la Woluwe",
+      "description": "Un parc vallonné avec plusieurs étangs, offrant un cadre naturel préservé.",
+      "address": "Avenue de Tervueren, 1150 Woluwe-Saint-Pierre",
+      "ambiance": "Bucolique et paisible, idéal pour l'observation des oiseaux",
+      "best_time": "Printemps pour les floraisons et automne pour les couleurs",
+      "uniqueness": "Les paysages vallonnés et les étangs qui créent des perspectives variées",
+      "info": "Accessible tous les jours, gratuit",
+      "coordinates": {
+        "lat": 50.8306,
+        "lng": 4.4278
+      },
+      "image": "parc_woluwe.jpg"
+    },
+    {
+      "title": "Forêt de Soignes",
+      "description": "Le poumon vert de la Région bruxelloise, idéal pour une promenade en pleine nature.",
+      "address": "Forêt de Soignes, 1160 Auderghem",
+      "ambiance": "Forestière et sauvage, parfaite pour les randonnées",
+      "best_time": "Toute l'année, particulièrement en automne pour les couleurs",
+      "uniqueness": "Une forêt de hêtres centenaires classée au patrimoine mondial de l'UNESCO",
+      "info": "Accessible tous les jours, nombreux sentiers balisés",
+      "coordinates": {
+        "lat": 50.7813,
+        "lng": 4.4308
+      },
+      "image": "foret_soignes.jpg"
+    },
+    {
+      "title": "Parc Josaphat",
+      "description": "Le grand parc de Schaerbeek, avec des espaces variés et des installations sportives.",
+      "address": "Avenue des Azalées, 1030 Schaerbeek",
+      "ambiance": "Animée et populaire, fréquentée par les habitants du quartier",
+      "best_time": "Weekends pour profiter des activités et de l'ambiance locale",
+      "uniqueness": "Mini-ferme pour enfants et étangs avec des canards",
+      "info": "Accessible tous les jours, gratuit",
+      "coordinates": {
+        "lat": 50.8567,
+        "lng": 4.3775
+      },
+      "image": "parc_josaphat.jpg"
+    },
+    {
+      "title": "Jardins du Mont des Arts",
+      "description": "Un jardin géométrique offrant une vue panoramique sur la ville basse de Bruxelles.",
+      "address": "Mont des Arts, 1000 Bruxelles",
+      "ambiance": "Urbaine et culturelle, entourée de musées et institutions",
+      "best_time": "Fin d'après-midi pour la lumière dorée sur la ville",
+      "uniqueness": "La vue panoramique sur l'Hôtel de Ville et la Grand-Place",
+      "info": "Accessible tous les jours, gratuit",
+      "coordinates": {
+        "lat": 50.8449,
+        "lng": 4.3567
+      },
+      "image": "mont_des_arts.jpg"
+    },
+    {
+      "title": "Parc de Tervueren",
+      "description": "Un grand parc situé juste à l'extérieur de Bruxelles, autour du Musée royal de l'Afrique centrale.",
+      "address": "Avenue de Tervueren, 3080 Tervuren",
+      "ambiance": "Majestueuse et historique, avec de grandes allées et des étangs",
+      "best_time": "Printemps et été pour profiter pleinement des jardins",
+      "uniqueness": "Le cadre du Musée royal de l'Afrique centrale et les jardins français",
+      "info": "Accessible tous les jours, gratuit",
+      "coordinates": {
+        "lat": 50.8292,
+        "lng": 4.5169
+      },
+      "image": "parc_tervueren.jpg"
+    },
+    {
+      "title": "Promenade Verte",
+      "description": "Un parcours de 60 km encerclant la Région de Bruxelles-Capitale, divisé en 7 tronçons accessibles à pied ou à vélo.",
+      "address": "Divers points d'accès autour de Bruxelles",
+      "ambiance": "Variée, alternant zones urbaines, parcs et espaces naturels",
+      "best_time": "Printemps et été, par temps sec pour les sections non pavées",
+      "uniqueness": "La diversité des paysages et la possibilité de découvrir Bruxelles sous un angle différent",
+      "info": "Accessible toute l'année, parcours balisé",
+      "coordinates": {
+        "lat": 50.8466,
+        "lng": 4.3528
+      },
+      "image": "promenade_verte.jpg"
+    }
+  ]
+}

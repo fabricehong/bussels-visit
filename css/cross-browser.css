@@ -1,0 +1,126 @@
+/* Styles pour assurer la compatibilité cross-browser */
+
+/* Préfixes pour flexbox */
+.container, .content-area, .map-container, .place-card, .place-info, .place-details, .detail-item, 
+.filters-container, .date-filters, .nav-item, .main-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Préfixes pour les transitions */
+.place-card, .nav-item, .date-filter-item, .marker-inner, .custom-marker, .popup-button {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/* Préfixes pour les transformations */
+.custom-marker.active .marker-inner {
+  -webkit-transform: scale(1.4);
+  -moz-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  -o-transform: scale(1.4);
+  transform: scale(1.4);
+}
+
+/* Préfixes pour box-shadow */
+.place-card, .marker-inner, .popup-content {
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Préfixes pour border-radius */
+.place-card, .place-image, .category-badge, .date-filter-item, .marker-inner, .popup-content, .popup-button {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+}
+
+/* Correction pour Internet Explorer */
+.places-list {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+/* Correction pour Firefox */
+.places-list {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) #f1f1f1;
+}
+
+/* Correction pour Safari */
+.places-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.places-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.places-list::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 4px;
+}
+
+/* Correction pour les anciennes versions d'Edge */
+@supports (-ms-ime-align: auto) {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .content-area, .map-container {
+    flex: 1 1 auto;
+  }
+}
+
+/* Correction pour les problèmes de hauteur sur iOS */
+@supports (-webkit-touch-callout: none) {
+  #map {
+    height: 100% !important;
+  }
+  
+  .map-container {
+    height: 100vh;
+    max-height: 100vh;
+  }
+}
+
+/* Assurer que les images ne dépassent pas leur conteneur */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Correction pour les problèmes de z-index sur certains navigateurs */
+.leaflet-pane {
+  z-index: 400;
+}
+
+.leaflet-top, .leaflet-bottom {
+  z-index: 1000;
+}
+
+/* Assurer que les polices sont chargées correctement */
+@font-face {
+  font-display: swap;
+}
+
+/* Correction pour les problèmes de performance sur les appareils mobiles */
+@media (max-width: 768px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .places-list {
+    -webkit-overflow-scrolling: touch;
+  }
+}

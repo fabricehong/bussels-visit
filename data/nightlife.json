@@ -1,0 +1,145 @@
+{
+  "category": "Nightlife",
+  "places": [
+    {
+      "title": "Delirium Café",
+      "description": "Le spot le plus populaire parmi les touristes à Bruxelles, avec sa sélection impressionnante de plus de 2000 bières. Cette ruelle abrite plusieurs petits bars, dont le principal s'étend sur trois étages. C'est également l'emplacement de la célèbre statue Jeanneke Pis.",
+      "address": "Impasse de la Fidélité 4, 1000 Bruxelles",
+      "ambiance": "Animée et conviviale, idéale pour les amateurs de bière",
+      "best_time": "En début de soirée pour éviter la foule du week-end",
+      "uniqueness": "Détient le record du monde Guinness pour le plus grand nombre de bières disponibles",
+      "info": "Ouvert tous les jours, ambiance particulièrement festive le week-end",
+      "coordinates": {
+        "lat": 50.8485,
+        "lng": 4.3541
+      },
+      "image": "delirium_cafe.jpg"
+    },
+    {
+      "title": "Fuse",
+      "description": "Ancien cinéma devenu l'un des clubs techno les plus populaires de Bruxelles et un centre de la culture LGBTQ+. Le club est connu pour sa soirée mensuelle La Démence dédiée à la communauté LGBTQ+ qui a débuté il y a plus de 20 ans.",
+      "address": "Rue Blaes 208, 1000 Bruxelles",
+      "ambiance": "Électronique et inclusive, son de qualité",
+      "best_time": "Nuit du samedi pour les meilleures soirées",
+      "uniqueness": "L'un des temples de la techno à Bruxelles avec des systèmes sonores et d'éclairage de pointe",
+      "info": "Pas de frais d'entrée pour certaines soirées, à 13 minutes du centre-ville",
+      "coordinates": {
+        "lat": 50.8383,
+        "lng": 4.3429
+      },
+      "image": "fuse.jpg"
+    },
+    {
+      "title": "Madame Moustache",
+      "description": "Un club fantaisiste classique qui diffuse de la musique de toutes les époques, où vous êtes sûr de danser. C'est l'un des clubs les plus populaires de Bruxelles parmi les touristes et les locaux. Après avoir dansé et bu quelques verres, vous pouvez vous rendre dans le fumoir ou même vous faire couper les cheveux dans le salon de coiffure sur place!",
+      "address": "Quai au Bois à Brûler 5-7, 1000 Bruxelles",
+      "ambiance": "Éclectique et vintage, décor rétro",
+      "best_time": "Vendredi et samedi soir pour l'ambiance maximale",
+      "uniqueness": "Salon de coiffure sur place et décoration inspirée des cabarets du 19ème siècle",
+      "info": "Concerts live et DJ sets variés, de l'électro-swing au rock",
+      "coordinates": {
+        "lat": 50.8512,
+        "lng": 4.3469
+      },
+      "image": "madame_moustache.jpg"
+    },
+    {
+      "title": "Spirito Brussels",
+      "description": "Avez-vous déjà été dans une boîte de nuit installée dans une ancienne église? Après avoir visité Spirito Brussels, vous pourrez dire que oui! Autrefois église, maintenant transformée en club populaire conservant l'architecture originale avec l'ajout de cristal et d'or.",
+      "address": "Rue de Stassart 18, 1050 Bruxelles",
+      "ambiance": "Grandiose et unique, sous les voûtes d'une église",
+      "best_time": "Samedi soir pour l'expérience complète",
+      "uniqueness": "Club de nuit dans une église désacralisée avec architecture originale préservée",
+      "info": "Code vestimentaire strict, préférez les tenues avec paillettes ou sequins",
+      "coordinates": {
+        "lat": 50.8362,
+        "lng": 4.3622
+      },
+      "image": "spirito.jpg"
+    },
+    {
+      "title": "Le Cercueil",
+      "description": "Un bar à thème Halloween ouvert toute l'année situé sur la Grand Place. Se traduisant par \"Le Cercueil\", le bar est rempli de squelettes, y compris les chopes, et les tables sont des cercueils. Profitez d'un verre effrayant en écoutant de la musique hard rock.",
+      "address": "Rue des Harengs 10-12, 1000 Bruxelles",
+      "ambiance": "Macabre et rock, décoration sur le thème de la mort",
+      "best_time": "Soirée pour profiter pleinement de l'ambiance sombre",
+      "uniqueness": "Tables en forme de cercueils et décoration permanente d'Halloween",
+      "info": "Prix légèrement plus élevés, mais l'atmosphère unique en vaut la peine",
+      "coordinates": {
+        "lat": 50.8468,
+        "lng": 4.3525
+      },
+      "image": "le_cercueil.jpg"
+    },
+    {
+      "title": "La Porte Noire",
+      "description": "Un bar souterrain situé dans une cave du 16ème siècle servant plus de 100 bières et 80 whiskies. Le bar est l'endroit idéal pour quelqu'un qui cherche une soirée détendue à boire avec des amis. En soirée, le bar accueille de la musique live.",
+      "address": "Rue des Alexiens 67, 1000 Bruxelles",
+      "ambiance": "Intime et historique, dans une cave voûtée",
+      "best_time": "Soirée pour les concerts live",
+      "uniqueness": "Cave médiévale authentique avec une sélection impressionnante de bières et whiskies",
+      "info": "Concerts réguliers de blues, jazz et folk",
+      "coordinates": {
+        "lat": 50.8431,
+        "lng": 4.3483
+      },
+      "image": "la_porte_noire.jpg"
+    },
+    {
+      "title": "BIRDY Brussels",
+      "description": "Situé sur les hauteurs de la ville, le BIRDY Brussels est un Bar-Club où vous pouvez poser avec sophistication et sans modération. Avec sa vue panoramique sur Bruxelles, c'est l'endroit idéal pour commencer ou terminer votre soirée.",
+      "address": "Place Rogier 3, 1210 Bruxelles",
+      "ambiance": "Chic et sophistiquée, vue panoramique",
+      "best_time": "Coucher de soleil pour profiter de la vue sur la ville",
+      "uniqueness": "Rooftop avec vue à 360° sur Bruxelles",
+      "info": "Cocktails créatifs et DJ sets élégants",
+      "coordinates": {
+        "lat": 50.8583,
+        "lng": 4.3603
+      },
+      "image": "birdy.jpg"
+    },
+    {
+      "title": "The Modern Alchemist",
+      "description": "Si vous cherchez des cocktails, c'est l'endroit hautement recommandé par les locaux. The Modern Alchemist se targue de son menu de cocktails innovants, avec des concoctions élaborées avec précision et créativité.",
+      "address": "Rue du Bailli 71, 1050 Bruxelles",
+      "ambiance": "Élégante et créative, atmosphère de speakeasy",
+      "best_time": "Début de soirée pour apprécier l'art des mixologistes",
+      "uniqueness": "Cocktails moléculaires et présentation artistique",
+      "info": "Peut être bondé le week-end, réservation recommandée",
+      "coordinates": {
+        "lat": 50.8283,
+        "lng": 4.3561
+      },
+      "image": "modern_alchemist.jpg"
+    },
+    {
+      "title": "Jealousy",
+      "description": "Jealousy est un speakeasy tenu par Jérémie Renier. L'acteur Jérémie Renier a créé un bar caché derrière une façade discrète, offrant une expérience exclusive avec des cocktails artisanaux et une ambiance intimiste.",
+      "address": "Rue de la Reinette 12, 1000 Bruxelles",
+      "ambiance": "Mystérieuse et exclusive, style speakeasy",
+      "best_time": "Soirée pour l'ambiance feutrée",
+      "uniqueness": "Bar caché avec entrée discrète, concept de speakeasy authentique",
+      "info": "Cocktails artisanaux de haute qualité, ambiance intimiste",
+      "coordinates": {
+        "lat": 50.8456,
+        "lng": 4.3497
+      },
+      "image": "jealousy.jpg"
+    },
+    {
+      "title": "La Cabane",
+      "description": "La Cabane est un club hybride avec une capacité de 300 personnes. Il propose une programmation variée allant de la musique électronique aux concerts live, dans un cadre à la fois brut et chaleureux.",
+      "address": "Avenue du Port 1, 1000 Bruxelles",
+      "ambiance": "Alternative et industrielle",
+      "best_time": "Nuit du vendredi et samedi pour les meilleurs DJ sets",
+      "uniqueness": "Espace modulable entre club et salle de concert dans un cadre industriel",
+      "info": "Programmation éclectique, de l'électro au hip-hop",
+      "coordinates": {
+        "lat": 50.8614,
+        "lng": 4.3503
+      },
+      "image": "la_cabane.jpg"
+    }
+  ]
+}

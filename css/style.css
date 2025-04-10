@@ -1,0 +1,276 @@
+/* Base styles */
+:root {
+    --primary-color: #FF4D6D;
+    --secondary-color: #6C63FF;
+    --accent-color: #38B6FF;
+    --dark-color: #333333;
+    --light-color: #F8F9FA;
+    --success-color: #28A745;
+    --warning-color: #FFC107;
+    --danger-color: #DC3545;
+    --gray-100: #F8F9FA;
+    --gray-200: #E9ECEF;
+    --gray-300: #DEE2E6;
+    --gray-400: #CED4DA;
+    --gray-500: #ADB5BD;
+    --gray-600: #6C757D;
+    --gray-700: #495057;
+    --gray-800: #343A40;
+    --gray-900: #212529;
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--gray-800);
+    background-color: var(--gray-100);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* Header styles */
+header {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.main-nav {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.nav-item {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all var(--transition-speed) ease;
+    color: var(--gray-700);
+}
+
+.nav-item:hover {
+    background-color: var(--gray-200);
+    color: var(--primary-color);
+}
+
+.nav-item.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Main content styles */
+.container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    gap: 2rem;
+    height: calc(100vh - 140px);
+}
+
+.content-area {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 1rem;
+}
+
+.category-title {
+    margin-bottom: 2rem;
+}
+
+.category-title h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.category-description {
+    color: var(--gray-600);
+    font-size: 1.1rem;
+}
+
+.places-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.place-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    cursor: pointer;
+}
+
+.place-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.place-card.active {
+    border: 2px solid var(--primary-color);
+}
+
+.place-image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.place-info {
+    padding: 1.5rem;
+}
+
+.place-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.place-description {
+    color: var(--gray-700);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.place-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--gray-600);
+}
+
+.detail-icon {
+    color: var(--primary-color);
+}
+
+/* Map styles */
+.map-container {
+    flex: 1;
+    position: sticky;
+    top: 5.5rem;
+    height: calc(100vh - 140px);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+/* Footer styles */
+footer {
+    background-color: var(--gray-800);
+    color: var(--gray-300);
+    padding: 1.5rem 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .map-container {
+        position: relative;
+        top: 0;
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-nav {
+        justify-content: center;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    .map-container {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 1rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    .main-nav {
+        gap: 0.5rem;
+    }
+    
+    .nav-item {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .category-title h2 {
+        font-size: 1.5rem;
+    }
+    
+    .category-description {
+        font-size: 1rem;
+    }
+    
+    .map-container {
+        height: 300px;
+    }
+}

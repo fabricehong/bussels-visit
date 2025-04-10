@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Découvrir Bruxelles - Guide Créatif</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/additional-styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/cross-browser.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Bruxelles Créative</h1>
+        </div>
+        <nav>
+            <ul class="main-nav">
+                <li data-category="lieux-plein-air" class="nav-item active">Lieux en plein air</li>
+                <li data-category="lieux-originaux" class="nav-item">Lieux originaux</li>
+                <li data-category="evenements" class="nav-item">Événements</li>
+                <li data-category="restos-uniques" class="nav-item">Restos uniques</li>
+                <li data-category="nightlife" class="nav-item">Nightlife</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="content-area">
+                <div class="category-title">
+                    <h2>Lieux en plein air</h2>
+                    <p class="category-description">Découvrez les plus beaux espaces verts et lieux de promenade à Bruxelles</p>
+                </div>
+                <div class="places-list" id="places-container">
+                    <!-- Le contenu sera généré dynamiquement par JavaScript -->
+                </div>
+            </div>
+            <div class="map-container">
+                <div id="map"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Bruxelles Créative - Guide pour découvrir la ville du 14 au 17 avril</p>
+            <p>© 2025 - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script src="js/data-loader-fixed.js"></script>
+    <script src="js/map-complete.js"></script>
+    <script src="js/main-complete.js"></script>
+</body>
+</html>

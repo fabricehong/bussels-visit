@@ -1,0 +1,125 @@
+{
+  "category": "Événements",
+  "places": [
+    {
+      "title": "Brussels Makers Market",
+      "description": "Un marché créatif incontournable à Tour & Taxis célébrant le talent des artisans locaux. Bijoux, déco, vêtements et œuvres d'art uniques vous attendent dans une ambiance chaleureuse.",
+      "address": "Maritim Station – Tour & Taxis, Rue Picard 7, 1000 Bruxelles",
+      "ambiance": "Chaleureuse et créative, idéale pour découvrir l'artisanat local",
+      "best_time": "Samedi et dimanche, de 11h à 18h",
+      "uniqueness": "Rencontre directe avec les créateurs et artisans bruxellois",
+      "info": "Entrée gratuite, se poursuit après le 17 avril",
+      "coordinates": {
+        "lat": 50.8676,
+        "lng": 4.3455
+      },
+      "image": "brussels_makers_market.jpg",
+      "dates": "13-14 avril 2025"
+    },
+    {
+      "title": "Exposition ICONS de Steve McCurry",
+      "description": "Une rétrospective fascinante dédiée au célèbre photographe Steve McCurry, installée au cœur de la Grand-Place. Plus de 100 clichés emblématiques, dont le légendaire portrait de Sharbat Gula.",
+      "address": "5 Grand-Place, 1000 Bruxelles",
+      "ambiance": "Culturelle et immersive, voyage visuel à travers les cultures du monde",
+      "best_time": "En semaine pour éviter l'affluence",
+      "uniqueness": "Audioguide où McCurry commente lui-même ses œuvres",
+      "info": "Exposition ouverte du 3 avril à début septembre 2025",
+      "coordinates": {
+        "lat": 50.8467,
+        "lng": 4.3525
+      },
+      "image": "steve_mccurry.jpg",
+      "dates": "14-17 avril 2025 (exposition en cours)"
+    },
+    {
+      "title": "Marché du Quai des Péniches",
+      "description": "Un nouveau marché installé chaque dimanche au Quai des Péniches à Bruxelles. Produits gourmands et artisanaux – fruits et légumes de saison, fromages affinés, pain, olives, vins bio.",
+      "address": "Quai des Péniches 36, 1000 Bruxelles",
+      "ambiance": "Conviviale et détendue, au bord de l'eau",
+      "best_time": "Dimanche matin pour les produits les plus frais",
+      "uniqueness": "Approche zéro déchet et cadre unique au bord du canal",
+      "info": "Tous les dimanches de 9h à 15h",
+      "coordinates": {
+        "lat": 50.8608,
+        "lng": 4.3473
+      },
+      "image": "marche_peniches.jpg",
+      "dates": "14 avril 2025"
+    },
+    {
+      "title": "Proximus Fibre Event",
+      "description": "Un événement d'information sur la fibre optique où des experts Proximus répondent à toutes vos questions sur l'installation, les prix et les forfaits disponibles.",
+      "address": "Lambermontlaan 1, 1000 Brussel",
+      "ambiance": "Informative et technologique",
+      "best_time": "Toute la journée",
+      "uniqueness": "Possibilité de gagner une PlayStation 5",
+      "info": "Jeudi 17 avril 2025, de 10h à 19h",
+      "coordinates": {
+        "lat": 50.8466,
+        "lng": 4.3644
+      },
+      "image": "proximus_event.jpg",
+      "dates": "17 avril 2025"
+    },
+    {
+      "title": "Candlelight : Concert à la bougie",
+      "description": "Une expérience musicale magique dans de magnifiques lieux éclairés à la bougie, avec des interprétations de musique classique et contemporaine.",
+      "address": "Lieu à confirmer, Bruxelles",
+      "ambiance": "Intime et romantique",
+      "best_time": "Soirée",
+      "uniqueness": "Musique live dans un cadre féérique éclairé uniquement aux bougies",
+      "info": "Mercredi 16 avril 2025, billets à partir de 19€",
+      "coordinates": {
+        "lat": 50.8450,
+        "lng": 4.3500
+      },
+      "image": "candlelight_concert.jpg",
+      "dates": "16 avril 2025"
+    },
+    {
+      "title": "Mundo Pixar Experience",
+      "description": "Une exposition immersive qui vous plonge dans les coulisses de vos films Pixar préférés. Des décors emblématiques à taille réelle vous attendent dans un espace expositif de plus de 3 000 m².",
+      "address": "Tour & Taxis, Avenue du Port 86C, 1000 Bruxelles",
+      "ambiance": "Familiale et ludique, parfaite pour les fans de Pixar",
+      "best_time": "En semaine pour moins d'affluence",
+      "uniqueness": "Décors à taille réelle des films Pixar les plus populaires",
+      "info": "Exposition en cours pendant la période du séjour",
+      "coordinates": {
+        "lat": 50.8677,
+        "lng": 4.3485
+      },
+      "image": "mundo_pixar.jpg",
+      "dates": "14-17 avril 2025 (exposition en cours)"
+    },
+    {
+      "title": "Visite à vélo des points forts de Bruxelles",
+      "description": "Une visite guidée à vélo pour découvrir les joyaux cachés et les points forts de la ville de Bruxelles, avec un guide local expérimenté.",
+      "address": "Point de départ à confirmer, centre de Bruxelles",
+      "ambiance": "Active et exploratoire",
+      "best_time": "Matinée pour profiter de la fraîcheur",
+      "uniqueness": "Découverte de lieux secrets inaccessibles en transport traditionnel",
+      "info": "Durée: 3,5 heures, disponible les 14, 15, 16 et 17 avril",
+      "coordinates": {
+        "lat": 50.8467,
+        "lng": 4.3517
+      },
+      "image": "velo_bruxelles.jpg",
+      "dates": "14-17 avril 2025"
+    },
+    {
+      "title": "Atelier et dégustation de truffes au chocolat belge",
+      "description": "Apprenez à confectionner de délicieuses truffes au chocolat belge et dégustez vos créations lors de cet atelier interactif.",
+      "address": "Centre-ville de Bruxelles (lieu exact communiqué lors de la réservation)",
+      "ambiance": "Gourmande et conviviale",
+      "best_time": "Après-midi",
+      "uniqueness": "Expérience hands-on avec un maître chocolatier belge",
+      "info": "Durée: 1,5 heures, disponible les 14, 15, 16 et 17 avril",
+      "coordinates": {
+        "lat": 50.8462,
+        "lng": 4.3508
+      },
+      "image": "atelier_chocolat.jpg",
+      "dates": "14-17 avril 2025"
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "category": "Restos uniques",
+  "places": [
+    {
+      "title": "Piola Libri",
+      "description": "Un concept très spécial : un bar-restaurant-librairie 100% italien ! L'abondance de livres crée une atmosphère paisible au milieu de l'agitation de la ville.",
+      "address": "Rue Franklin 66/68, 1000 Bruxelles",
+      "ambiance": "Littéraire et italienne, calme et chaleureuse",
+      "best_time": "En soirée pour profiter de l'ambiance et d'un bon verre de vin",
+      "uniqueness": "Combinaison unique de librairie italienne et restaurant authentique",
+      "info": "Idéal pour les amateurs de littérature et de cuisine italienne",
+      "coordinates": {
+        "lat": 50.8418,
+        "lng": 4.3759
+      },
+      "image": "piola_libri.jpg"
+    },
+    {
+      "title": "La cabane du fou chantant",
+      "description": "Niché dans les arbres, ce restaurant vous invite à grimper dans les arbres et à déguster votre dîner, préparé avec amour par Maison Félix.",
+      "address": "Avenue De fré 176, 1180 Bruxelles (Uccle)",
+      "ambiance": "Romantique et insolite, en pleine nature",
+      "best_time": "Soirée d'été pour profiter du cadre naturel",
+      "uniqueness": "Restaurant perché dans une cabane dans les arbres",
+      "info": "Capacité maximale de 4 personnes, réservation indispensable",
+      "coordinates": {
+        "lat": 50.8008,
+        "lng": 4.3619
+      },
+      "image": "cabane_fou_chantant.jpg"
+    },
+    {
+      "title": "Le Flylounge",
+      "description": "Une expérience culinaire unique dans un avion sans ailes, transformé en restaurant éphémère. Les clients peuvent profiter de repas gastronomiques accompagnés de vins fins.",
+      "address": "Rue du Commerce 65, 1000 Bruxelles",
+      "ambiance": "Originale et immersive, comme un voyage culinaire",
+      "best_time": "Samedi soir pour l'expérience complète",
+      "uniqueness": "Options de pilotage et visites du cockpit pour une immersion totale",
+      "info": "L'avion peut être privatisé pour des occasions spéciales",
+      "coordinates": {
+        "lat": 50.8414,
+        "lng": 4.3694
+      },
+      "image": "flylounge.jpg"
+    },
+    {
+      "title": "Nemo 33",
+      "description": "L'une des piscines les plus profondes du monde. Regardez les performances des nageurs à travers les grandes baies vitrées du restaurant, tout en dégustant un délicieux plat asiatique !",
+      "address": "Rue de Stalle 333, 1180 Uccle",
+      "ambiance": "Aquatique et surprenante",
+      "best_time": "Après-midi pour voir les plongeurs en action",
+      "uniqueness": "Vue sous-marine sur une piscine de plongée de 33 mètres de profondeur",
+      "info": "Cuisine asiatique, possibilité de combiner plongée et repas",
+      "coordinates": {
+        "lat": 50.7889,
+        "lng": 4.3308
+      },
+      "image": "nemo33.jpg"
+    },
+    {
+      "title": "Le Wasbar",
+      "description": "Le premier resto-laverie de Bruxelles. Lancez une machine et profitez d'un bon repas entre amis ! Au menu : bagels, salades, finger foods et desserts.",
+      "address": "Rue Henri Maus 45, 1000 Bruxelles",
+      "ambiance": "Décontractée et pratique, concept original",
+      "best_time": "Matinée ou après-midi pour combiner lessive et repas",
+      "uniqueness": "Combinaison unique de laverie et restaurant",
+      "info": "Idéal pour les étudiants et voyageurs",
+      "coordinates": {
+        "lat": 50.8467,
+        "lng": 4.3517
+      },
+      "image": "wasbar.jpg"
+    },
+    {
+      "title": "The Tram Experience",
+      "description": "Dînez dans un tram réaménagé qui vous fait découvrir les monuments emblématiques de Bruxelles. Un concept foodie unique où vous pouvez déguster un délicieux repas inspiré par des chefs talentueux tout en explorant la ville.",
+      "address": "Place Poelaert (point de départ), 1000 Bruxelles",
+      "ambiance": "Élégante et mobile, vue changeante sur la ville",
+      "best_time": "Soirée pour voir la ville illuminée",
+      "uniqueness": "Restaurant mobile dans un tram historique réaménagé",
+      "info": "Réservation obligatoire, menu gastronomique",
+      "coordinates": {
+        "lat": 50.8371,
+        "lng": 4.3520
+      },
+      "image": "tram_experience.jpg"
+    },
+    {
+      "title": "Belga Queen",
+      "description": "Un restaurant haut de gamme situé dans un ancien bâtiment bancaire du 19e siècle absolument magnifique. Ce lieu mélange le moderne et le traditionnel et propose d'excellents plats belges, des fruits de mer et un fumoir à cigares dans l'ancien coffre-fort de la banque.",
+      "address": "Rue Fossé aux Loups 32, 1000 Bruxelles",
+      "ambiance": "Élégante et historique, cadre impressionnant",
+      "best_time": "Soirée pour l'ambiance plus feutrée",
+      "uniqueness": "Architecture bancaire historique et fumoir à cigares dans l'ancien coffre-fort",
+      "info": "Cuisine belge raffinée, réservation recommandée",
+      "coordinates": {
+        "lat": 50.8498,
+        "lng": 4.3553
+      },
+      "image": "belga_queen.jpg"
+    },
+    {
+      "title": "Dans le Noir",
+      "description": "Un concept unique où les clients mangent dans l'obscurité totale. Une expérience sensorielle inoubliable qui vous fait redécouvrir le goût et les textures des aliments.",
+      "address": "Warwick Hotel, Rue Duquesnoy 5, 1000 Bruxelles",
+      "ambiance": "Mystérieuse et sensorielle",
+      "best_time": "Soirée pour l'expérience complète",
+      "uniqueness": "Repas servi dans l'obscurité totale par des serveurs malvoyants",
+      "info": "Menu surprise, réservation obligatoire",
+      "coordinates": {
+        "lat": 50.8458,
+        "lng": 4.3552
+      },
+      "image": "dans_le_noir.jpg"
+    },
+    {
+      "title": "9 et Voisins",
+      "description": "Un charmant restaurant qui offre une délicieuse combinaison de cocktails et de plats de pâtes originaux. L'établissement présente une variété de menus saisonniers, avec une douzaine d'options de pâtes chaque semaine.",
+      "address": "Rue des Chartreux 9, 1000 Bruxelles",
+      "ambiance": "Bistro authentique et chaleureux",
+      "best_time": "Dîner pour profiter de l'ambiance",
+      "uniqueness": "Cuisine belge traditionnelle dans un cadre authentique",
+      "info": "Spécialités : viande et lapin en sauce, accompagnés de pommes de terre",
+      "coordinates": {
+        "lat": 50.8486,
+        "lng": 4.3462
+      },
+      "image": "9_et_voisins.jpg"
+    },
+    {
+      "title": "Chalet Robinson",
+      "description": "Un véritable coin de paradis pour profiter d'un moment unique. Un cadre authentique avec un restaurant où vous pouvez déguster un menu généreux, situé sur une île au milieu d'un étang.",
+      "address": "Avenue du Bois de la Cambre 1, 1000 Bruxelles",
+      "ambiance": "Bucolique et isolée, au milieu de la nature",
+      "best_time": "Déjeuner par beau temps pour profiter du cadre",
+      "uniqueness": "Accessible uniquement par bateau depuis les rives du Bois de la Cambre",
+      "info": "Cuisine belge traditionnelle, terrasse avec vue sur l'étang",
+      "coordinates": {
+        "lat": 50.8097,
+        "lng": 4.3804
+      },
+      "image": "chalet_robinson.jpg"
+    }
+  ]
+}
