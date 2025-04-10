@@ -263,6 +263,21 @@ function createPlaceCard(place, index) {
             setTimeout(() => {
                 console.log('Délai terminé, initialisation de la carte');
                 
+                // Forcer le conteneur de la carte à avoir des dimensions
+                const mapContainer = document.getElementById('map');
+                if (mapContainer) {
+                    console.log("Dimensions du conteneur avant initialisation:", 
+                              mapContainer.offsetWidth, "x", mapContainer.offsetHeight);
+                    
+                    // S'assurer que le conteneur a des dimensions suffisantes
+                    if (mapContainer.offsetWidth < 10 || mapContainer.offsetHeight < 10) {
+                        mapContainer.style.width = "100%";
+                        mapContainer.style.height = "100vh";
+                        // Forcer un reflow du DOM
+                        mapContainer.getBoundingClientRect();
+                    }
+                }
+                
                 // Si nous sommes en mode mobile et que la carte n'est pas encore initialisée
                 if (window.innerWidth <= 768 && !isMapInitialized) {
                     console.log('Initializing map for the first time in mobile mode');
@@ -281,18 +296,20 @@ function createPlaceCard(place, index) {
                     }
                 }
                 
-                // Mettre en évidence le lieu sur la carte
-                if (window.mapManager && typeof window.mapManager.highlightPlace === 'function') {
-                    window.mapManager.highlightPlace(index);
-                    console.log('Place highlighted on map');
-                }
-                
-                // Mettre à jour la carte
-                if (window.mapManager && typeof window.mapManager.updateMap === 'function') {
-                    window.mapManager.updateMap();
-                    console.log('Map updated');
-                }
-            }, 300); // Délai plus long pour s'assurer que le conteneur est visible
+                // Mettre en évidence le lieu sur la carte après un court délai supplémentaire
+                setTimeout(() => {
+                    if (window.mapManager && typeof window.mapManager.highlightPlace === 'function') {
+                        window.mapManager.highlightPlace(index);
+                        console.log('Place highlighted on map');
+                    }
+                    
+                    // Mettre à jour la carte
+                    if (window.mapManager && typeof window.mapManager.updateMap === 'function') {
+                        window.mapManager.updateMap();
+                        console.log('Map updated');
+                    }
+                }, 100);
+            }, 300); // Délai pour s'assurer que le conteneur est visible
         }
     });
     

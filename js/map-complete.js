@@ -20,6 +20,8 @@ function initMap() {
                 console.log("Conteneur trop petit, application d'une taille temporaire");
                 mapContainer.style.width = "100%";
                 mapContainer.style.height = "100vh";
+                // Forcer un reflow du DOM pour appliquer les changements immédiatement
+                mapContainer.getBoundingClientRect();
             }
         }
         
@@ -46,11 +48,21 @@ function initMap() {
             if (map) {
                 map.invalidateSize({
                     animate: false,
-                    pan: false
+                    pan: false,
+                    debounceMoveend: false  // Ne pas retarder l'événement moveend
                 });
+                // Forcer un redessinage complet
+                map._onResize();
                 console.log("Taille de la carte invalidée après initialisation");
+                
+                // Ajouter les marqueurs stockés si nécessaire
+                if (window.currentPlaces && window.currentPlaces.length > 0) {
+                    console.log("Ajout des marqueurs stockés après initialisation");
+                    addMarkersForPlaces(window.currentPlaces);
+                    window.currentPlaces = null; // Nettoyer après utilisation
+                }
             }
-        }, 100);
+        }, 200); // Délai plus long pour s'assurer que le DOM est prêt
         
         console.log("Carte initialisée avec succès");
     } catch (error) {
@@ -63,8 +75,8 @@ function createCustomMarker(isActive = false) {
     return L.divIcon({
         className: `custom-marker ${isActive ? 'active' : ''}`,
         html: `<div class="marker-inner"></div>`,
-        iconSize: [30, 30],
-        iconAnchor: [15, 30]
+        iconSize: [20, 20],        // Taille de l'icône (doit correspondre à la taille réelle du cercle)
+        iconAnchor: [10, 10]       // Point d'ancrage au centre du cercle
     });
 }
 
@@ -198,9 +210,7 @@ function addCustomMarkerStyles() {
             border-radius: 50%;
             border: 2px solid white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            position: relative;
-            top: -10px;
-            left: -10px;
+            /* Suppression de position: relative et des décalages top/left qui causent le problème */
             transition: transform 0.3s ease, background-color 0.3s ease;
         }
         
@@ -218,11 +228,28 @@ function updateMap() {
     console.log('Updating map display');
     if (map) {
         try {
+            // Vérifier si le conteneur de la carte est visible
+            const mapContainer = document.getElementById('map');
+            if (mapContainer) {
+                console.log("Dimensions actuelles du conteneur de carte:", 
+                          mapContainer.offsetWidth, "x", mapContainer.offsetHeight);
+                
+                // Si le conteneur est visible mais trop petit, forcer une taille
+                if (mapContainer.offsetWidth < 10 || mapContainer.offsetHeight < 10) {
+                    console.log("Conteneur trop petit lors de la mise à jour, application d'une taille");
+                    mapContainer.style.width = "100%";
+                    mapContainer.style.height = "100vh";
+                    // Forcer un reflow du DOM
+                    mapContainer.getBoundingClientRect();
+                }
+            }
+            
             // Forcer la mise à jour de la carte immédiatement
             console.log('Forcing map invalidateSize');
             map.invalidateSize({
                 animate: false,
-                pan: false
+                pan: false,
+                debounceMoveend: false  // Ne pas retarder l'événement moveend
             });
             
             // Forcer un redessinage de la carte
