@@ -150,6 +150,15 @@ function createPlaceCard(place, index) {
     card.className = 'place-card';
     card.dataset.index = index;
     
+    // Ajouter une classe spécifique à la carte en fonction de la catégorie
+    switch(currentCategory) {
+        case 'lieux-plein-air': card.classList.add('card-plein-air'); break;
+        case 'lieux-originaux': card.classList.add('card-originaux'); break;
+        case 'evenements': card.classList.add('card-evenements'); break;
+        case 'restos-uniques': card.classList.add('card-restos'); break;
+        case 'nightlife': card.classList.add('card-nightlife'); break;
+    }
+    
     // Utiliser une image par défaut si l'image spécifiée n'existe pas
     const imagePath = `images/${place.image}`;
     const imageUrl = place.image ? imagePath : 'images/default-place.jpg';
@@ -165,7 +174,6 @@ function createPlaceCard(place, index) {
     }
     
     card.innerHTML = `
-        <img src="${imageUrl}" alt="${place.title}" class="place-image" onerror="this.src='images/default-place.jpg'">
         <div class="place-info">
             <div class="category-badge ${badgeClass}">${window.dataLoader.categoryInfo[currentCategory].title}</div>
             <h3 class="place-title">${place.title}</h3>

@@ -75,17 +75,44 @@
 
 .place-card {
     animation: fadeIn 0.5s ease forwards;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styles pour les différentes catégories de cartes */
+.card-plein-air {
+    border-top-color: #2E7D32;
+}
+
+.card-originaux {
+    border-top-color: #1565C0;
+}
+
+.card-evenements {
+    border-top-color: #FF8F00;
+}
+
+.card-restos {
+    border-top-color: #C2185B;
+}
+
+.card-nightlife {
+    border-top-color: #4527A0;
 }
 
 /* Styles pour les badges de catégories */
 .category-badge {
     display: inline-block;
-    padding: 0.3rem 0.8rem;
+    padding: 0.4rem 1rem;
     border-radius: 15px;
-    font-size: 0.8rem;
-    font-weight: 500;
+    font-size: 0.85rem;
+    font-weight: 600;
     margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: -0.5rem;
 }
 
 .category-badge.plein-air {
@@ -163,7 +190,39 @@
 .leaflet-popup-content-wrapper {
     border-radius: 10px;
     padding: 0;
-    overflow: hidden;
+    max-width: 300px;
+}
+
+/* Styles pour le popup minimal */
+.custom-popup-minimal .leaflet-popup-content-wrapper {
+    border-radius: 4px;
+    padding: 5px;
+    max-width: 150px;
+}
+
+.custom-popup-minimal .leaflet-popup-content {
+    margin: 0;
+    padding: 0;
+}
+
+.popup-title-only {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--gray-800);
+}
+
+/* Styles responsives */
+@media (max-width: 768px) {
+    .detail-item {
+        width: calc(50% - 0.5rem);
+    }
+}
+
+@media (max-width: 576px) {
+    .detail-item {
+        width: 100%;
+    }
 }
 
 .leaflet-popup-content {
@@ -172,7 +231,8 @@
 }
 
 .popup-content {
-    width: 250px;
+    width: 100%;
+    max-width: 300px;
 }
 
 .popup-image {

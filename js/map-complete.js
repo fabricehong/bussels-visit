@@ -32,22 +32,9 @@ function createCustomMarker(isActive = false) {
     });
 }
 
-// Fonction pour créer des popups plus riches pour les marqueurs
+// Fonction pour créer des popups simples pour les marqueurs (seulement le titre)
 function createRichPopup(place) {
-    // Utiliser une image par défaut si l'image spécifiée n'existe pas
-    const imagePath = `images/${place.image}`;
-    const imageUrl = place.image ? imagePath : 'images/default-place.jpg';
-    
-    return `
-        <div class="popup-content">
-            <img src="${imageUrl}" alt="${place.title}" class="popup-image" onerror="this.src='images/default-place.jpg'">
-            <div class="popup-info">
-                <h3 class="popup-title">${place.title}</h3>
-                <p class="popup-description">${place.description.substring(0, 100)}...</p>
-                <a href="#" class="popup-button" onclick="window.mapManager.highlightPlace(${place.index}); return false;">Voir détails</a>
-            </div>
-        </div>
-    `;
+    return `<div class="popup-title-only">${place.title}</div>`;
 }
 
 // Ajout des marqueurs pour les lieux d'une catégorie
@@ -73,10 +60,10 @@ function addMarkersForPlaces(places) {
                 placeIndex: index
             });
             
-            // Ajouter un popup riche avec le titre et l'image du lieu
+            // Ajouter un popup simple avec seulement le titre du lieu
             marker.bindPopup(createRichPopup(place), {
-                maxWidth: 250,
-                className: 'custom-popup'
+                maxWidth: 150,
+                className: 'custom-popup-minimal'
             });
             
             // Ajouter un gestionnaire d'événements pour le clic sur le marqueur
@@ -122,8 +109,8 @@ function highlightPlace(index) {
         if (marker.options.placeIndex === index) {
             // Mettre à jour l'icône du marqueur actif
             marker.setIcon(createCustomMarker(true));
-            // Ouvrir le popup
-            marker.openPopup();
+            // Ne pas ouvrir automatiquement le popup
+            // marker.openPopup();
             // Centrer la carte sur le marqueur
             map.panTo(marker.getLatLng());
             // Mettre à jour le marqueur actif
