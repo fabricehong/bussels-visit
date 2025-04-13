@@ -104,3 +104,51 @@
         font-size: 16px;
     }
 }
+
+/* PWA Specific Styles */
+
+/* Ensure the logo div can be a positioning context */
+header .logo {
+  position: relative; 
+}
+
+/* Update Button Styles */
+#update-pwa-btn {
+  display: none; /* Hidden by default, shown by JS */
+  position: absolute;
+  top: 50%;
+  right: 0; /* Align to the right edge of the logo div */
+  transform: translateY(-50%); /* Center vertically */
+  background: none;
+  border: none;
+  color: var(--secondary-color, #6C63FF); /* Use variable with fallback */
+  font-size: 1.4rem; /* Adjust size */
+  cursor: pointer;
+  padding: 5px;
+  line-height: 1; /* Prevent extra spacing */
+  border-radius: 50%;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+#update-pwa-btn:hover {
+  color: var(--primary-color, #FF4D6D);
+  background-color: var(--gray-100, #f8f9fa);
+}
+
+#update-pwa-btn i.fa-sync-alt {
+  display: block; /* Helps with sizing/alignment */
+}
+
+/* Class added by JS to show the button */
+#update-pwa-btn.visible {
+  display: block;
+}
+
+/* Responsive Adjustments if needed */
+@media (max-width: 768px) {
+  #update-pwa-btn {
+    /* Adjust position if needed for mobile header layout */
+     right: -10px; /* Example: Move slightly outside if nav wraps differently */
+     /* Consider adjusting top/transform if header height changes drastically */
+  }
+}

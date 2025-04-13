@@ -106,3 +106,11 @@ self.addEventListener('beforeinstallprompt', event => {
   // Stockez l'événement pour l'utiliser plus tard
   self.deferredPrompt = event;
 });
+
+// Écouteur d'événements pour la mise à jour forcée
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    console.log('SW: Skip waiting message received. Activating new service worker.');
+    self.skipWaiting();
+  }
+});
