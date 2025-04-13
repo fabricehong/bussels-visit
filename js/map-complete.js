@@ -110,6 +110,8 @@ function createRichPopup(place) {
 
 // Ajout des marqueurs pour les lieux d'une catégorie
 function addMarkersForPlaces(places) {
+    // **DEBUG LOG 3**
+    console.log(`[DEBUG] addMarkersForPlaces: Reçu un tableau avec ${places ? places.length : 'undefined'} lieux. Premier titre (si existe): ${places?.[0]?.title}`);
     console.log("Ajout de marqueurs pour", places.length, "lieux");
     
     // Vérifier si la carte est initialisée

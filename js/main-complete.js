@@ -77,6 +77,8 @@ async function loadCategory(category) {
     if (data && data.places) {
         console.log("Données chargées avec succès:", data.places.length, "lieux");
         currentData = data;
+        window.currentPlaces = data.places;
+        console.log(`[DEBUG] loadCategory: window.currentPlaces mis à jour pour '${currentCategory}' avec ${window.currentPlaces.length} lieux.`);
         
         // Afficher les lieux
         displayPlaces(data.places);
@@ -267,12 +269,20 @@ function createPlaceCard(place, index) {
                     console.log("Dimensions du conteneur avant redim/init:", 
                         mapElement.offsetWidth, 'x', mapElement.offsetHeight);
                     
-                    // Si la carte existe déjà, juste redimensionner
-                    if (window.mapManager && window.mapManager.mapInstance) {
-                        window.mapManager.invalidateSize();
+                    // Re-vérifier l'état DANS le timeout
+                    const isMapInitializedNow = window.mapManager && window.mapManager.isMapInitialized && window.mapManager.isMapInitialized();
+                    console.log(`[DEBUG] Inside setTimeout: isMapInitialized (captured) = ${isMapInitialized}, isMapInitializedNow (re-checked) = ${isMapInitializedNow}`);
+
+                    // Utiliser la valeur re-vérifiée
+                    if (isMapInitializedNow) { 
+                        console.log('[DEBUG] Map was already initialized (re-checked). Updating markers.');
 
                         // MODIFICATION: Ensure markers for the CURRENT category are loaded
                         setTimeout(() => {
+                            console.log(`[DEBUG] createPlaceCard mobile click (map exists): Tentative d'ajout de marqueurs pour la catégorie '${window.currentCategory}'.`);
+                            console.log(`[DEBUG] window.currentPlaces contient actuellement ${window.currentPlaces ? window.currentPlaces.length : 'undefined'} lieux.`);
+                            console.log('[DEBUG] Premier lieu (si existe):', window.currentPlaces ? window.currentPlaces[0]?.title : 'N/A');
+
                             // ** ADDED/MODIFIED **: Always update markers if map already exists
                             if (window.currentPlaces && window.mapManager.addMarkersForPlaces) {
                                 console.log('MobileClick: Map exists, clearing old markers and adding markers for current category:', window.currentCategory);
@@ -294,8 +304,8 @@ function createPlaceCard(place, index) {
                         }, 50); // Short delay after invalidateSize
                     } 
                     // Si la carte n'est PAS initialisée, l'initialiser
-                    else if (!isMapInitialized && window.mapManager && typeof window.mapManager.initMap === 'function') {
-                        console.log('Initializing map for the first time on mobile click');
+                    else if (!isMapInitializedNow && window.mapManager && typeof window.mapManager.initMap === 'function') {
+                        console.log('Initializing map for the first time on mobile click (re-checked)');
                         window.mapManager.initMap('map'); 
                         // Ajouter les marqueurs après l'initialisation
                         if (window.currentPlaces && window.currentPlaces.length > 0 && window.mapManager.addMarkersForPlaces) {
@@ -311,7 +321,7 @@ function createPlaceCard(place, index) {
                             }, 50); // 50ms delay
                         }
                     } else {
-                        console.warn('Map manager or map instance not available for resize/init.');
+                        console.error('Map manager or map instance not available for resize/init (re-checked).'); // Message d'erreur mis à jour
                     }
                 } else {
                     console.error('Map element #map not found after delay');
