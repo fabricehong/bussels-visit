@@ -242,10 +242,10 @@ function createPlaceCard(place, index) {
         // Vérifier si on est en mode mobile (largeur d'écran <= 768px)
         if (window.innerWidth <= 768) {
             console.log('Mobile mode detected, showing map fullscreen');
-            // Mettre en évidence le lieu sur la carte
-            if (window.mapManager && typeof window.mapManager.highlightPlace === 'function') {
-                window.mapManager.highlightPlace(index);
-            }
+            // Mettre en évidence le lieu sur la carte - *** REMOVED from here ***
+            // if (window.mapManager && typeof window.mapManager.highlightPlace === 'function') {
+            //     window.mapManager.highlightPlace(index);
+            // }
 
             const mapContainerEl = document.querySelector('.map-container'); // Renamed variable to avoid conflict
             console.log('Map container found:', mapContainerEl);
@@ -255,41 +255,55 @@ function createPlaceCard(place, index) {
             console.log('Is map already initialized:', isMapInitialized);
 
             // Ajouter la classe pour afficher la carte en plein écran
-            // mapContainer.classList.add('active'); // Removed
-            // document.body.classList.add('map-active'); // Removed
             document.body.classList.add('map-fullscreen'); // Added
             console.log('Added map-fullscreen class to body');
 
-            // Attendre que le conteneur de la carte soit visible avant d'initialiser
+            // Attendre que le conteneur de la carte soit visible avant d'initialiser/redimensionner
             setTimeout(() => {
-                console.log('Délai terminé, initialisation de la carte');
+                console.log('Délai terminé, gestion de la carte');
 
-                // Forcer le conteneur de la carte à avoir des dimensions
                 const mapElement = document.getElementById('map'); // Renamed variable
                 if (mapElement) {
-                    console.log("Dimensions du conteneur avant initialisation:", 
+                    console.log("Dimensions du conteneur avant redim/init:", 
                         mapElement.offsetWidth, 'x', mapElement.offsetHeight);
                     
-                    // Redimensionner la carte après l'affichage
+                    // Si la carte existe déjà, juste redimensionner
                     if (window.mapManager && window.mapManager.mapInstance) {
                         window.mapManager.mapInstance.invalidateSize();
                         console.log('Map size invalidated');
-                    } else if (!isMapInitialized && window.mapManager && typeof window.mapManager.initMap === 'function') {
+                         // Mettre en évidence APRES redimensionnement pour être sûr
+                        if (window.mapManager && typeof window.mapManager.highlightPlace === 'function') {
+                            // Léger délai supplémentaire même ici, au cas où invalidateSize a des effets asynchrones
+                            setTimeout(() => {
+                                console.log('Highlighting place after map resize');
+                                window.mapManager.highlightPlace(index);
+                            }, 50);
+                        }
+                    } 
+                    // Si la carte n'est PAS initialisée, l'initialiser
+                    else if (!isMapInitialized && window.mapManager && typeof window.mapManager.initMap === 'function') {
                         console.log('Initializing map for the first time on mobile click');
                         window.mapManager.initMap('map'); 
                         // Ajouter les marqueurs après l'initialisation
                         if (window.currentPlaces && window.currentPlaces.length > 0 && window.mapManager.addMarkersForPlaces) {
                             window.mapManager.addMarkersForPlaces(window.currentPlaces);
-                            window.mapManager.highlightPlace(index); // Re-highlight after adding markers
                             console.log("Markers added after map init");
+                            
+                            // *** NESTED TIMEOUT ***: Attendre un court instant avant de highlight
+                            setTimeout(() => {
+                                console.log('Highlighting place after marker add delay');
+                                if (window.mapManager && typeof window.mapManager.highlightPlace === 'function') {
+                                    window.mapManager.highlightPlace(index); 
+                                }
+                            }, 50); // 50ms delay
                         }
                     } else {
-                        console.warn('Map manager or map instance not available for resize.');
+                        console.warn('Map manager or map instance not available for resize/init.');
                     }
                 } else {
                     console.error('Map element #map not found after delay');
                 }
-            }, 100); // Petit délai pour assurer que les styles CSS sont appliqués
+            }, 100); // Délai initial pour assurer que les styles CSS sont appliqués
 
         } else {
              // Comportement desktop (met en évidence seulement)
