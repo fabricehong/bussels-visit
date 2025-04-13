@@ -75,6 +75,57 @@
         padding: 0.4rem 0.8rem;
         margin-bottom: 0.5rem;
     }
+    
+    /* Styles for fullscreen map on mobile */
+    body.map-fullscreen header,
+    body.map-fullscreen footer {
+        display: none; /* Hide header and footer */
+    }
+
+    body.map-fullscreen .map-container {
+        position: fixed; /* Fixed position to cover viewport */
+        top: 0;
+        left: 0;
+        width: 100vw; /* Full viewport width */
+        height: 100vh; /* Full viewport height */
+        z-index: 1000; /* Ensure it's above other content */
+        margin-bottom: 0; /* Reset margin */
+        max-height: none; /* Override previous max-height */
+        overflow-y: hidden; /* Prevent scrolling on the container itself */
+    }
+    
+    body.map-fullscreen #map {
+        height: 100%;
+    }
+
+    body.map-fullscreen #close-map-btn {
+        display: block; /* Ensure button is visible */
+        position: absolute; /* Position relative to map-container */
+        top: 15px;
+        right: 15px;
+        z-index: 1001; /* Above the map */
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+    }
+
+    /* Keep original .close-map-button styles for default state */
+    .close-map-button {
+        display: none; /* Hide by default on mobile */
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(255, 255, 255, 0.8);
+        border: none;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+        line-height: 28px;
+        text-align: center;
+        cursor: pointer;
+        z-index: 401; /* Above map tiles */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
 }
 
 /* Améliorations pour les tablettes */
