@@ -269,16 +269,29 @@ function createPlaceCard(place, index) {
                     
                     // Si la carte existe déjà, juste redimensionner
                     if (window.mapManager && window.mapManager.mapInstance) {
-                        window.mapManager.mapInstance.invalidateSize();
-                        console.log('Map size invalidated');
-                         // Mettre en évidence APRES redimensionnement pour être sûr
-                        if (window.mapManager && typeof window.mapManager.highlightPlace === 'function') {
-                            // Léger délai supplémentaire même ici, au cas où invalidateSize a des effets asynchrones
-                            setTimeout(() => {
-                                console.log('Highlighting place after map resize');
-                                window.mapManager.highlightPlace(index);
-                            }, 50);
-                        }
+                        window.mapManager.invalidateSize();
+
+                        // MODIFICATION: Ensure markers for the CURRENT category are loaded
+                        setTimeout(() => {
+                            // ** ADDED/MODIFIED **: Always update markers if map already exists
+                            if (window.currentPlaces && window.mapManager.addMarkersForPlaces) {
+                                console.log('MobileClick: Map exists, clearing old markers and adding markers for current category:', window.currentCategory);
+                                window.mapManager.addMarkersForPlaces(window.currentPlaces); // Load correct markers
+                                
+                                // Nested timeout for highlighting after markers potentially added/re-added
+                                setTimeout(() => {
+                                    console.log(`MobileClick: Highlighting place ${index} after marker update`);
+                                    window.mapManager.highlightPlace(index);
+                                }, 50); // Short delay for marker rendering
+                            } else {
+                                console.error('MobileClick: Cannot add/re-add markers: currentPlaces or addMarkersForPlaces missing');
+                                // Fallback: Try highlighting anyway, might work if markers were somehow correct
+                                 setTimeout(() => {
+                                    console.warn(`MobileClick: Attempting highlight ${index} without marker update`);
+                                    window.mapManager.highlightPlace(index);
+                                }, 50);
+                            }
+                        }, 50); // Short delay after invalidateSize
                     } 
                     // Si la carte n'est PAS initialisée, l'initialiser
                     else if (!isMapInitialized && window.mapManager && typeof window.mapManager.initMap === 'function') {
