@@ -34,7 +34,8 @@
     .map-container {
         position: relative;
         top: 0;
-        height: 400px;
+        max-height: 75vh;
+        overflow-y: auto;
         margin-bottom: 1rem;
     }
     
